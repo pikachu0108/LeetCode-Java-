@@ -1,0 +1,17 @@
+//Brute Force Approach
+class Solution {
+    public long subArrayRanges(int[] nums) {    //Brute Force 
+        long sum = 0;
+        int size = nums.length;
+        for(int i = 0;i<size;i++){
+            int min = nums[i];
+            int max = nums[i];
+            for(int j = i;j<size;j++){
+                min = Math.min(min,nums[j]);
+                max = Math.max(max,nums[j]);
+                sum += max - min;
+            }
+        }
+        return sum;
+    }
+}
